@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+<style>
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+tr:hover {background-color: yellow;}
+</style>
+</head>
+<body>
+
+<h2>EDIT</h2>
+
+<p></p>
+<form class="login100-form validate-form" name="fm" method="POST" action="{% url 'edit' id=doctor.name %}" enctype="multipart/form-data">{% csrf_token %}
+
+    <table>
+  <tr>
+
+      <td>First Name </td><td> <input class="input100" type="text" name="name" placeholder="Enter name" value={{doctor.name}}></td></tr>
+<tr>
+	<td>Hospital </td><td><input class="input100" type="text" name="address" placeholder="Enter name" value={{doctor.address}}></td></tr>
+  <tr>    <td>Specialisation</td><td> <input class="input100" type="text" name="specialisation" placeholder="Enter name" value={{doctor.specialisation}}></td></tr>
+   <tr>   <td>Designation </td><td><input class="input100" type="text" name="designation" placeholder="Enter name" value={{doctor.designation}}></td>
+  </tr>
+		<tr><td><input type="submit" name="submit" value="Update"></td></tr>
+
+</table>
+</form>
+</body>
+</html>
+
+
